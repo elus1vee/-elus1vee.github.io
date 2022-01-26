@@ -1,0 +1,388 @@
+// ФАЙЛ ОБНУЛЯЮЩИЙ //
+@import "nullstyle.scss";
+// ПОДКЛЮЧЕНИЕ ШРИФТОВ //
+@import url("https://../../fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap");
+@font-face {
+  font-family: "PFDinTextCondPro";
+  src: url("../../fonts/pfdintextcondpro-regular.eot");
+  src: local("☺"), url("../../fonts/pfdintextcondpro-regular.woff") format("woff"),
+    url("../../fonts/pfdintextcondpro-regular.ttf") format("truetype"),
+    url("../../fonts/pfdintextcondpro-regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+//******************************************//
+html {
+  overflow: hidden;
+}
+body {
+  font-family: fantasy;
+}
+header {
+  margin: 10px 50px 20px;
+  display: flex;
+  max-height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  .logoTitle {
+    display: flex;
+    align-items: center;
+    .logo {
+      display: flex;
+      flex: 0 1 auto;
+      max-width: 130px;
+      img {
+        height: 100px;
+        width: 100px;
+        flex: 0 1 auto;
+        -webkit-transition: -webkit-transform 0.8s ease-in-out;
+        transition: transform 0.8s ease-in-out;
+        &:hover {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .title {
+      text-transform: uppercase;
+      color: rgb(163, 157, 241);
+      font-size: 35px;
+      font-family: "Permanent Marker";
+    }
+  }
+  .score {
+    outline: 3px solid rgb(163, 157, 241);
+    font-size: 35px;
+    padding: 10px;
+    border-radius: 13px;
+    color: rgb(163, 157, 241);
+  }
+}
+.main {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-height: 650px;
+  border-radius: 40px;
+  border: 4px solid rgb(0, 79, 86);
+  overflow: hidden;
+  flex: 1 1 auto;
+}
+
+.playground {
+  color: white;
+  font-size: 30px;
+  display: none;
+  flex: 1 1 auto;
+  background: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614250081_17-p-doska-dlya-mela-chernaya-fon-25.jpg")
+    0 0 no-repeat;
+  background-size: 1000px 650px;
+  padding: 40px;
+  flex-direction: column;
+  align-items: center;
+  &__contentMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+  &__result {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__resultScore {
+    font-size: 150px;
+    padding: 50px;
+  }
+  &__header {
+    align-self: flex-start;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+
+    .playground__timer {
+      font-size: 60px;
+      padding-left: 55px;
+      display: inline-block;
+    }
+
+    .playground__score__now {
+      font-size: 30px;
+    }
+    .playground__score__all {
+      color: grey;
+      font-size: 17px;
+    }
+  }
+  &__main {
+    font-size: 150px;
+    font-family: Permanent Marker;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+
+    min-width: 70%;
+    justify-content: center;
+
+    div {
+      padding: 40px;
+    }
+  }
+  &__equal {
+    font-family: Permanent Marker;
+    font-size: 100px;
+    margin-bottom: 30px;
+  }
+  &__footer {
+    font-family: Permanent Marker;
+    font-size: 70px;
+    min-width: 60%;
+
+    .playground__answers {
+      display: flex;
+      justify-content: space-around;
+
+      div {
+        padding: 0 55px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .playground__own {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      #inputAnswer {
+        max-width: 300px;
+        background: none;
+        color: white;
+        height: 70px;
+        font-size: 70px;
+        letter-spacing: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.content {
+  flex: 1 1 auto;
+  display: none;
+  &__main {
+    background: url("../../img/bgmenu.jpg") 0 0 no-repeat;
+    background-size: 1000px 650px;
+    padding: 40px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__footer {
+    min-width: 700px;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+  }
+  &__column {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.2), 0 -1px rgba(0, 0, 0, 0.8);
+    outline: none;
+    border: none;
+    border-radius: 100px;
+    background: rgb(163, 157, 241)
+      radial-gradient(150% 100% at 50% 5px, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0));
+    box-shadow: inset rgba(0, 0, 0, 0.6) 0 -2px 5px, inset rgba(252, 255, 255, 0.7) 0 2px 5px,
+      rgba(0, 0, 0, 0.8) 0 2px 5px -1px;
+    color: rgb(72, 69, 116);
+    user-select: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    &:hover {
+      top: -5px;
+      left: 0;
+    }
+  }
+  &__content {
+    align-self: flex-start;
+    padding: 40px;
+    min-width: 700px;
+    outline: 5px solid rgb(17, 7, 7);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+  }
+  &__play {
+    align-self: flex-start;
+    padding: 40px;
+    min-width: 700px;
+    outline: 5px solid rgb(17, 7, 7);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      font-size: 35px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-decoration: underline;
+    }
+    .play__row {
+      display: flex;
+      justify-content: space-around;
+    }
+    .play__arifmColumn {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 40px;
+      font-size: 30px;
+      input {
+        margin-top: 10px;
+        font-size: 20px;
+        min-height: 30px;
+        text-align: center;
+      }
+    }
+    .play__button {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 10px 30px 20px 30px;
+      width: 150px;
+      height: 45px;
+      position: relative;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 700;
+      color: rgb(209, 209, 217);
+      text-decoration: none;
+      text-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+      padding: 0.5em 1em;
+      outline: none;
+      border-radius: 3px;
+      background: linear-gradient(rgb(110, 112, 120), rgb(81, 81, 86)) rgb(110, 112, 120);
+      box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 3px 5px rgba(0, 1, 6, 0.5),
+        0 0 1px 1px rgba(0, 1, 6, 0.2);
+      transition: 0.2s ease-in-out;
+      &:active {
+        top: 1px;
+        background: linear-gradient(rgb(76, 77, 82), rgb(56, 57, 62)) rgb(76, 77, 82);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 2px 3px rgba(0, 0, 0, 0.5) inset,
+          0 1px 1px rgba(255, 255, 255, 0.1);
+      }
+      &:hover {
+        background: linear-gradient(rgb(126, 126, 134), rgb(70, 71, 76)) rgb(126, 126, 134);
+      }
+    }
+    .play__item {
+      display: flex;
+      justify-content: space-around;
+      flex: 1 1 auto;
+    }
+    .play__column {
+      width: 300px;
+      outline: 3px solid rgb(110, 112, 120);
+      background: url("../../img/playbg.jpg") center / cover no-repeat;
+      border-radius: 20px;
+      margin: 10px;
+      padding: 15px;
+    }
+  }
+  &__paragraph {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.enter {
+  flex: 1 1 auto;
+  background: url("../../img/bgenter.jpg") no-repeat;
+  background-size: 1000px 650px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__menu {
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    min-width: 300px;
+    min-height: 200px;
+    background-color: rgba(17, 24, 56, 0.692);
+    display: flex;
+    flex-direction: column;
+    .menu__title {
+      text-align: center;
+      font-size: 35px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .menu__form {
+      margin-top: 30px;
+      align-self: center;
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__button {
+          padding: 5px 20px;
+          font-size: 20px;
+          outline: 2px solid rgb(163, 157, 241);
+          border-radius: 10px;
+          &:hover {
+            box-shadow: 0 0 10px rgb(16, 241, 35);
+            outline: 2px solid rgb(35, 211, 73);
+          }
+        }
+        input {
+          font-size: 20px;
+          padding: 3px;
+          outline: 1px solid blueviolet;
+          border-radius: 5px;
+          transition: all 0.2s;
+          margin-bottom: 20px;
+          &:focus {
+            box-shadow: 0 0 10px rgb(27, 190, 62);
+            outline: 2px solid rgb(43, 160, 43);
+            background-color: rgb(230, 218, 218);
+          }
+        }
+      }
+    }
+  }
+}
+
+.selected-page {
+  color: rgb(255, 255, 255);
+}
+
+#playExit {
+  background: url("../../img/icons/icons8-крестик-48.png") no-repeat;
+  background-size: 40px 40px;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+  &:hover {
+    top: -6px;
+    left: -6px;
+    background-size: cover;
+  }
+}

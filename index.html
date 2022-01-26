@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="RU">
+  <head>
+    <title>S1MPLE MATH</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/icons/logo.ico" />
+    <meta charset="UTF-8" />
+    <!-- Адаптивность страницы -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+
+    <!-- Ключевые слова страницы -->
+    <meta name="keywords" content="simple математика,простая математика, математика" />
+    <script src="./js/index.js" type="module"></script>
+  </head>
+
+  <body>
+    <audio id="wrongAudio">
+      <source src="./audio/wrong.mp3" />
+    </audio>
+    <audio id="trueAudio">
+      <source src="./audio/true.mp3" />
+    </audio>
+    <header>
+      <div class="logoTitle">
+        <div class="logo">
+          <img src="./img/logo.webp" id="logo" alt="" />
+        </div>
+        <div class="title">
+          <h1>s1mple math</h1>
+        </div>
+      </div>
+      <div class="volume">
+        <!-- <img src="./img/icons/volume.png" alt="" /> -->
+      </div>
+      <div class="score">Очки: <span id="headerScore">0</span></div>
+    </header>
+    <div class="main">
+      <div class="enter">
+        <div class="enter__menu">
+          <div class="menu__title">Вход</div>
+          <div class="menu__form">
+            <form action="" name="form">
+              <div class="form">
+                <input type="text" name="nick" placeholder="Введите nick" />
+                <button class="form__button">Вход</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="playground">
+        <div class="playground__header">
+          <button id="playExit"></button>
+          <div class="playground__timer"><span id="timer">60</span>с</div>
+          <div class="playground__score">
+            <div class="playground__score__now">Очки: <span id="scoreNow">0</span></div>
+            <div class="playground__score__all">Всего: <span id="scoreAll">0</span></div>
+          </div>
+        </div>
+        <div class="playground__contentMain">
+          <div class="playground__main">
+            <div id="firstNum"></div>
+            <div id="key">+</div>
+            <div id="secondNum">0</div>
+          </div>
+          <div class="playground__equal">=</div>
+          <div class="playground__footer">
+            <div class="playground__answers">
+              <div id="answer1">1</div>
+              <div id="answer2">2</div>
+              <div id="answer3">3</div>
+            </div>
+            <div class="playground__own">
+              <form action="" name="playform">
+                <input
+                  type="number"
+                  name="playAnswer"
+                  id="inputAnswer"
+                  autocomplete="off"
+                  autofocus
+                  tabindex="0"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="playground__result">
+          <div class="playground__main">Вы набрали:</div>
+          <div class="playground__resultScore" id="resultScore">0</div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content__main">
+          <div class="content__cont"></div>
+          <div class="content__footer">
+            <div class="content__row">
+              <button class="content__column" id="play">Начать</button>
+              <button class="content__column" id="rules">Правила</button>
+              <button class="content__column" id="exit">Выход</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
