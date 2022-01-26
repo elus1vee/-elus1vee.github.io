@@ -216,6 +216,7 @@ function playgroundMathHard(price, nick) {
 
 function playgroundArifm(nick, quantity, delay) {
   document.getElementById("firstNum").innerHTML = "";
+  document.getElementById("secondNum").innerHTML = "0";
   let operations = quantity;
   document.getElementById("inputAnswer").readOnly = true;
   let answer = 0;
