@@ -74,3 +74,24 @@ play.addEventListener("click", (event) => {
 buttonPlayExit.addEventListener("click", (event) => {
   openMenuPage();
 });
+
+let audio = document.getElementById("audioOn");
+let audioArr = [document.getElementById("wrongAudio"), document.getElementById("trueAudio")];
+let audioFlag = "on";
+audio.addEventListener("click", (event) => {
+  if (audioFlag === "on") {
+    audio.style.background = "url('./../../img/icons/volumeMuted.png')";
+    console.log("muted");
+    audioArr.forEach((audio) => {
+      audio.muted = true;
+    });
+    audioFlag = "off";
+  } else {
+    audio.style.background = "url('./../../img/icons/volumeIcon.png')";
+    audioFlag = "on";
+    console.log("on");
+    audioArr.forEach((audio) => {
+      audio.muted = false;
+    });
+  }
+});

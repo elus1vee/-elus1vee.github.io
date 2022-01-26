@@ -10,15 +10,27 @@ let scoreAllDiv = document.getElementById("scoreAll");
 const buttonPlayExit = document.getElementById("playExit");
 let formPlay = document.playform;
 let inputPlay = formPlay.playAnswer;
+const option1 = document.getElementById("answer1");
+const option2 = document.getElementById("answer2");
+const option3 = document.getElementById("answer3");
+const audioWrong = document.getElementById("wrongAudio");
+const audioTrue = document.getElementById("trueAudio");
+const key = document.getElementById("key");
+const keyArr = ["+", "-", "*"];
+
+let myHandler = function (event) {
+  if (event.key == 1) {
+    option1.click();
+  }
+  if (event.key == 2) {
+    option2.click();
+  }
+  if (event.key == 3) {
+    option3.click();
+  }
+};
 
 function playgroundMathEz(price, nick) {
-  const option1 = document.getElementById("answer1");
-  const option2 = document.getElementById("answer2");
-  const option3 = document.getElementById("answer3");
-  const audio = document.getElementById("wrongAudio");
-  const audioTrue = document.getElementById("trueAudio");
-  const key = document.getElementById("key");
-  const keyArr = ["+", "-", "*"];
   let temp = 1;
   let answer = 0;
 
@@ -80,7 +92,7 @@ function playgroundMathEz(price, nick) {
         setTimeout(() => {
           option1.style.color = "white";
         }, 500);
-        audio.play();
+        audioWrong.play();
       }
     }
   };
@@ -101,7 +113,7 @@ function playgroundMathEz(price, nick) {
         setTimeout(() => {
           option2.style.color = "white";
         }, 500);
-        audio.play();
+        audioWrong.play();
       }
     }
   };
@@ -123,7 +135,7 @@ function playgroundMathEz(price, nick) {
         setTimeout(() => {
           option3.style.color = "white";
         }, 500);
-        audio.play();
+        audioWrong.play();
       }
     }
   };
@@ -135,18 +147,16 @@ function playgroundMathEz(price, nick) {
     document.getElementsByClassName("playground__result")[0].style.display = "none";
     openMenuPage();
     temp = 0;
+    document.removeEventListener("keydown", myHandler);
   });
   generateEquation();
   option1.addEventListener("click", lol1);
   option2.addEventListener("click", lol2);
   option3.addEventListener("click", lol3);
+  document.addEventListener("keydown", myHandler);
 }
 
 function playgroundMathHard(price, nick) {
-  const audioWrong = document.getElementById("wrongAudio");
-  const audioTrue = document.getElementById("trueAudio");
-  const key = document.getElementById("key");
-  const keyArr = ["+", "-", "*"];
   let answer = 0;
   let temp = 1;
 
@@ -207,10 +217,6 @@ function playgroundMathHard(price, nick) {
 function playgroundArifm(nick, quantity, delay) {
   let operations = quantity;
   document.getElementById("inputAnswer").readOnly = true;
-  const audioWrong = document.getElementById("wrongAudio");
-  const audioTrue = document.getElementById("trueAudio");
-  const key = document.getElementById("key");
-  const keyArr = ["+", "-", "*"];
   let answer = 0;
   let temp = 1;
 
@@ -303,6 +309,7 @@ class MyMath {
         document.getElementsByClassName("playground__contentMain")[0].style.display = "none";
         document.getElementsByClassName("playground__result")[0].style.display = "flex";
         clearInterval(intervalId);
+        document.removeEventListener("keydown", myHandler);
       } else {
         --timer;
         document.getElementById("timer").innerHTML = timer;

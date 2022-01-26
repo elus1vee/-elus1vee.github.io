@@ -52,12 +52,17 @@ header {
       font-family: "Permanent Marker";
     }
   }
+  .volumeScore {
+    display: flex;
+    align-items: center;
+  }
   .score {
     outline: 3px solid rgb(163, 157, 241);
     font-size: 35px;
     padding: 10px;
     border-radius: 13px;
     color: rgb(163, 157, 241);
+    margin-left: 20px;
   }
 }
 .main {
@@ -384,5 +389,18 @@ header {
     top: -6px;
     left: -6px;
     background-size: cover;
+  }
+}
+
+#audioOn {
+  background: url("./../../img/icons/volumeIcon.png") no-repeat;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+
+  &:hover {
+    -webkit-box-shadow: 0px 0px 58px 3px rgba(125, 18, 212, 0.4) inset;
+    -moz-box-shadow: 0px 0px 58px 3px rgba(125, 18, 212, 0.4) inset;
+    box-shadow: 0px 0px 58px 3px rgba(125, 18, 212, 0.4) inset;
   }
 }
