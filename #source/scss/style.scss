@@ -84,7 +84,7 @@ header {
   flex-direction: column;
   margin: 0 auto;
   max-width: 1000px;
-  min-width: 65.5%;
+  min-width: 66%;
   border-radius: 40px;
   border: 4px solid rgb(0, 79, 86);
   overflow: hidden;
@@ -200,8 +200,8 @@ header {
     flex: 1 1 100%;
   }
   &__main {
-    background: url("../../img/bgmenu.jpg") 0 0 no-repeat;
-    background-size: 1000px 650px;
+    background: url("../../img/bgmenu.jpg") center/cover no-repeat;
+    background-size: 1500px 650px;
     padding: 40px;
     flex: 1 1 600px;
     display: flex;
@@ -251,7 +251,7 @@ header {
   &__content {
     align-self: flex-start;
     padding: 40px;
-    min-width: auto;
+    width: 100%;
     outline: 5px solid rgb(17, 7, 7);
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 30px;
@@ -332,14 +332,14 @@ header {
     }
   }
   &__paragraph {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 10px;
   }
 }
 
 .enter {
   background: url("../../img/bgenter.jpg") no-repeat;
-  background-size: 1000px 650px;
+  background-size: 1500px 650px;
   padding: 40px;
   display: flex;
   flex: 1 1 600px;
