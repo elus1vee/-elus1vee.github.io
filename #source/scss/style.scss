@@ -30,6 +30,8 @@ html {
 }
 body {
   font-family: fantasy;
+  display: flex;
+  flex-direction: column;
 }
 header {
   margin: 10px 50px 20px;
@@ -78,12 +80,15 @@ header {
 }
 .main {
   display: flex;
+  min-height: 300px;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 1000px;
-  min-height: 650px;
+  min-width: 65.5%;
   border-radius: 40px;
   border: 4px solid rgb(0, 79, 86);
   overflow: hidden;
+  max-height: 650px;
   flex: 1 1 auto;
 }
 
@@ -91,7 +96,7 @@ header {
   color: white;
   font-size: 30px;
   display: none;
-  flex: 1 1 auto;
+  flex: 1 1 600px;
   background: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614250081_17-p-doska-dlya-mela-chernaya-fon-25.jpg")
     0 0 no-repeat;
   background-size: 1000px 650px;
@@ -188,19 +193,22 @@ header {
 }
 
 .content {
-  flex: 1 1 auto;
+  flex: 1 1 600px;
   display: none;
+  flex-direction: column;
+  &__cont {
+    flex: 1 1 100%;
+  }
   &__main {
     background: url("../../img/bgmenu.jpg") 0 0 no-repeat;
     background-size: 1000px 650px;
     padding: 40px;
-    flex: 1 1 auto;
+    flex: 1 1 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   &__footer {
-    min-width: 700px;
     font-size: 50px;
     display: flex;
     justify-content: space-around;
@@ -209,9 +217,12 @@ header {
     display: flex;
     justify-content: space-around;
     min-width: 100%;
+    margin-top: 30px;
+    flex: 1 1 auto;
   }
   &__column {
     display: inline-block;
+    flex: 0 1 auto;
     width: 150px;
     height: 50px;
     line-height: 50px;
@@ -239,7 +250,7 @@ header {
   &__content {
     align-self: flex-start;
     padding: 40px;
-    min-width: 700px;
+    min-width: auto;
     outline: 5px solid rgb(17, 7, 7);
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 30px;
@@ -326,11 +337,11 @@ header {
 }
 
 .enter {
-  flex: 1 1 auto;
   background: url("../../img/bgenter.jpg") no-repeat;
   background-size: 1000px 650px;
   padding: 40px;
   display: flex;
+  flex: 1 1 600px;
   justify-content: center;
   align-items: center;
   &__menu {
