@@ -28,7 +28,7 @@ function openRulesPage() {
   let p3 = document.createElement("p");
   p3.className = "content__paragraph";
   p3.innerHTML =
-    "<span style=color:green>Лёгкий</span> уровень сложности включает два режима: <span style=text-decoration:underline>классический</span> (попадаются любые математические операции и времени сколько угодно), <span style=text-decoration:underline>на время</span> (за 60с решить наибольшее число задач).";
+    "<span style=color:green>Лёгкий</span> уровень сложности включает два  режима: <span style=text-decoration:underline>классический</span> (попадаются любые математические операции и времени сколько угодно), <span style=text-decoration:underline>на время</span> (за 60с решить наибольшее число задач).";
   div.append(p3);
   let p4 = document.createElement("p");
   p4.className = "content__paragraph";

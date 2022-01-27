@@ -24,9 +24,8 @@ document.getElementById("logo").addEventListener("click", (event) => {
 });
 
 form.addEventListener("submit", (event) => {
-  nick = nick.value;
-  document.getElementById("headerScore").innerHTML = getLocaleStorage(nick);
   event.preventDefault();
+  nick = nick.value;
   let nickArr = nick.split("");
   if (nickArr.length < 3) {
     location.reload();
@@ -34,6 +33,7 @@ form.addEventListener("submit", (event) => {
   } else {
     if (localStorage.getItem(nick)) {
       scoreValue = getLocaleStorage(nick);
+      document.getElementById("headerScore").innerHTML = getLocaleStorage(nick);
       openMenuPage();
     } else {
       setLocaleStorage(nick, scoreValue);
