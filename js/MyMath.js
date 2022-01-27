@@ -217,6 +217,7 @@ function playgroundMathHard(price, nick) {
 function playgroundArifm(nick, quantity, delay) {
   document.getElementById("firstNum").innerHTML = "";
   document.getElementById("secondNum").innerHTML = "0";
+  key.innerHTML = "";
   let operations = quantity;
   document.getElementById("inputAnswer").readOnly = true;
   let answer = 0;
@@ -226,6 +227,8 @@ function playgroundArifm(nick, quantity, delay) {
     let oper = keyArr[Math.floor(Math.random() * keyArr.length)];
     key.innerHTML = oper;
     let number = getRandomIntInclusive(0, 5);
+
+    document.getElementById("secondNum").innerHTML = number;
 
     switch (oper) {
       case "+":
@@ -239,7 +242,6 @@ function playgroundArifm(nick, quantity, delay) {
       default:
         break;
     }
-    document.getElementById("secondNum").innerHTML = number;
   }
   buttonPlayExit.addEventListener("click", (event) => {
     document.getElementById("timer").innerHTML = 60;
@@ -265,15 +267,14 @@ function playgroundArifm(nick, quantity, delay) {
       document.getElementById("inputAnswer").focus();
     } else {
       generateEquation();
-
+      console.log(answer);
       operations--;
     }
   }, delay * 1000);
   buttonPlayExit.addEventListener("click", () => {
     clearInterval(intervalId);
   });
-
-  formPlay.addEventListener("submit", (event) => {
+  const funcPlay = (event) => {
     event.preventDefault();
     if (temp == 0) {
       return;
@@ -289,10 +290,16 @@ function playgroundArifm(nick, quantity, delay) {
         document.getElementById("headerScore").innerHTML = getLocaleStorage(nick);
       } else {
         document.getElementById("inputAnswer").readOnly = true;
+        console.log("Правильный ответ: " + answer);
         audioWrong.play();
       }
     }
-  });
+    formPlay.removeEventListener("submit", funcPlay);
+    formPlay.addEventListener("submit", (event) => {
+      event.preventDefault();
+    });
+  };
+  formPlay.addEventListener("submit", funcPlay);
 }
 
 class MyMath {
