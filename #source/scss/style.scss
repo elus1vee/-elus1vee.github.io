@@ -98,8 +98,7 @@ header {
   display: none;
   flex: 1 1 600px;
   background: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614250081_17-p-doska-dlya-mela-chernaya-fon-25.jpg")
-    0 0 no-repeat;
-  background-size: 1000px 650px;
+    center/cover no-repeat;
   padding: 40px;
   flex-direction: column;
   align-items: center;

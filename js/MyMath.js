@@ -223,13 +223,20 @@ function playgroundArifm(nick, quantity, delay) {
   let answer = 0;
   let temp = 1;
 
-  function generateEquation() {
-    let oper = keyArr[Math.floor(Math.random() * keyArr.length)];
-    key.innerHTML = oper;
-    let number = getRandomIntInclusive(0, 5);
-
-    document.getElementById("secondNum").innerHTML = number;
-
+  async function generateEquation() {
+    let oper = 0;
+    let colorArr = ["red", "white", "yellow", "orange", "green", "pink", "purple"];
+    let promise = new Promise((resolve, reject) => {
+      oper = keyArr[Math.floor(Math.random() * keyArr.length)];
+      key.innerHTML = oper;
+      let number = getRandomIntInclusive(0, 5);
+      document.getElementById("secondNum").innerHTML = number;
+      document.getElementById("secondNum").style.color =
+        colorArr[Math.floor(Math.random() * colorArr.length)];
+      resolve(number);
+    });
+    let number = await promise;
+    console.log(number + "+");
     switch (oper) {
       case "+":
         answer += number;
@@ -253,6 +260,7 @@ function playgroundArifm(nick, quantity, delay) {
     document.getElementById("inputAnswer").readOnly = false;
     document.getElementById("firstNum").innerHTML = "";
     document.getElementById("secondNum").innerHTML = "0";
+    document.getElementById("secondNum").style.color = "white";
     document.getElementById("key").innerHTML = "";
     inputPlay.value = "";
   });
@@ -262,12 +270,12 @@ function playgroundArifm(nick, quantity, delay) {
       clearInterval(intervalId);
       document.getElementById("firstNum").innerHTML = "Ваш";
       document.getElementById("key").innerHTML = "";
+      document.getElementById("secondNum").style.color = "white";
       document.getElementById("secondNum").innerHTML = "ответ";
       document.getElementById("inputAnswer").readOnly = false;
       document.getElementById("inputAnswer").focus();
     } else {
       generateEquation();
-      console.log(answer);
       operations--;
     }
   }, delay * 1000);
